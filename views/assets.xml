@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <template id="assets_backend" name="vph_import_tool_assets_backend" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/vph_import_tool/static/src/js/import_tool.js"/>
+            </xpath>
+<!--            <xpath expr="//script[last()]" position="after">-->
+<!--            </xpath>-->
+        </template>
+    </data>
+</odoo>

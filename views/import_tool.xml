@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+       <record model="ir.ui.view" id="vph_import_tool_form">
+          <field name="name">vph_import_tool_form</field>
+          <field name="model">import.tool</field>
+          <field name="arch" type="xml">
+              <form>
+                  <div class="o_view_nocontent">
+                <div class="o_nocontent_help">
+                    <p class="o_view_nocontent_smiling_face">
+                        Select a CSV or Excel file to import.
+                    </p>
+                    <div>
+                        <field name="model_id" domain="[('model', 'in', ['product.template'])]"/>
+                    </div>
+                    <div>
+                        <field name="model_name" invisible="1"/>
+                    </div>
+                    <div>
+                        <field name="product_category" attrs="{'invisible':[('model_name', '!=', 'product.template')]}"/>
+                    </div>
+                    <div attrs="{'invisible':['|', ('model_name', '!=', 'product.template'), ('product_category', '=', False)]}">
+                        <a href="/vph_import_tool/static/src/xml/import_tool.xml" aria-label="Download" title="Download">
+                            <i class="fa fa-download"></i> <span>Import Template for Products</span>
+                        </a>
+                    </div>
+                    <div attrs="{'invisible':['|', ('model_name', '!=', 'product.template'), ('product_category', '=', False)]}">
+                        <field name="file" string="Select File"/>
+                    </div>
+                    <div attrs="{'invisible':['|', ('model_name', '!=', 'product.template'), ('product_category', '=', False)]}">
+                        <button name="import_data" string="Start Upload" type="object" class="btn-primary"/>
+                    </div>
+                </div>
+            </div>
+              </form>
+          </field>
+        </record>
+    </data>
+</odoo>

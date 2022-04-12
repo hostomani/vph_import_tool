@@ -1,0 +1,8 @@
+<odoo>
+  <data>
+    <menuitem name="Import Tool" id="vph_import_tool.menu_root"/>
+
+    <menuitem name="Import" id="vph_import_tool.import_tool" parent="vph_import_tool.menu_root"
+              action="vph_import_tool.vph_import_tool_action"/>
+  </data>
+</odoo>
